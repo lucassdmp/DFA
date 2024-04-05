@@ -15,7 +15,7 @@ public class DFA {
             Transition transition = qState.transition(character);
             if(transition == null){
                 System.out.println("No transition for character: " + character + " in state: " + qState.getName());
-                return false;
+                return qState.isFinal();
             }
             State qNext = transition.getState();
             System.out.println("Transition: " + qState.getName() + " -> " + qNext.getName() + " with character: " + character);
